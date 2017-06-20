@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link href="main.css" rel="stylesheet" />
+    <link href="../scripts/vendor/bulma.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Taktanzahl</title>
+    <style>
+
+        body {
+            padding: 0.75rem;
+            margin: 0;
+            font-family: 'Kanit', sans-serif
+        }
+        main {
+            display: grid;
+            grid-template-columns: 450px;
+            grid-template-rows: 700px 500px 700px 700px;
+        }
+        .chart {
+            width: 900px;
+
+        }
+        #chart1 {
+            grid-column-start: 1;
+            grid-column-end: end;
+            grid-row-start: 1;
+
+        }
+        #chart2 {
+            width: 440px;
+            grid-column-start: 1;
+            grid-row-start: 2;
+            padding: 5px;
+
+        }
+        #chart3 {
+            width: 900px;
+            grid-column-start: 1;
+            grid-column-end: end;
+            grid-row-start: 3;
+            padding: 0;
+        }
+        #chart4 {
+            width: 440px;
+            padding: 5px;
+            grid-column-start: 2;
+            grid-row-start: 2;
+        }
+        #chart5 {
+            width: 900px;
+            grid-column-start: 1;
+            grid-row-start: 4;
+        }
+        h1 {
+            font-size: 1.5em;
+            border:0;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            padding: 5px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="columns">
+    <div class="column is-2">
+        <aside class="menu ">
+            <p class="menu-label">
+                Navigation
+            </p>
+            <ul class="menu-list" >
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../ngram/index.html">nGramme</a></li>
+
+                <li><a class="is-active">Takte</a></li>
+                <li><a href="tempo.html">Tempo</a></li>
+                <li><a href="index.html">Noten</a>
+
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="column">
+        <h1>Taktverteilung der verschiedenen Messen</h1>
+        <p>Einheit: Takte</p>
+        <main>
+
+
+            <div class="chart" id="chart1">
+
+                <h2>Übersicht mit einzelnen Sätzen</h2>
+                <canvas id="myChart" width="600" height="400"></canvas>
+            </div>
+
+            <div class="chart" id="chart2">
+                <h2>Durchschnitt Mozart</h2>
+                <canvas id="myChart2" width="600" height="400"></canvas>
+            </div>
+            <div class="chart" id="chart4">
+                <h2>Durchschnitt MacIntyre</h2>
+                <canvas id="myChart4" width="600" height="400"></canvas>
+            </div>
+            <div class="chart" id="chart3">
+                <h2>Sätze zusammengefasst</h2>
+                <canvas id="myChart3" width="600" height="400"></canvas>
+            </div>
+            <div class="chart" id="chart5">
+
+                <canvas id="myChart5" width="600" height="400"></canvas>
+            </div>
+        </main>
+    </div>
+
+</div>
+
+<script src="../scripts/vendor/jquery-3.2.1.min.js"></script>
+<script src="../scripts/vendor/charts/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+<script src="../scripts/counter/takte.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: "takte1.csv",
+            dataType: "text",
+            success: function(data) {
+
+                Chart1.createChart(data);
+
+            }
+        });
+        Chart2.createChart();
+        Chart3.createChart();
+        Chart4.createChart();
+        Chart5.createChart();
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <title>
+        Mozart nGram Viewer
+    </title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link href="index.css" rel="stylesheet"/>
+
+    <link href="../scripts/vendor/datatables/datatables.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../scripts/vendor/jquery-ui.min.css">
+    <link rel="stylesheet" href="../scripts/vendor/jstree/style.min.css" />
+    <link href="../scripts/vendor/bulma.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+
+<aside class="menu">
+
+    <p class="menu-label">
+        Navigation
+    </p>
+    <ul class="menu-list" id="eachmissa">
+        <li><a href="../index.html">Home</a></li>
+        <li><a class="is-active">nGramme</a></li>
+        <li><a href="../counter/takte.html">Takte</a></li>
+        <li><a href="../counter/tempo.html">Tempo</a></li>
+        <li><a href="../counter/index.html">Noten</a></li>
+    </ul>
+</aside>
+<div id="dist-dialog" class="dist-dialog" title="Open File">
+    <div id="jstree"></div>
+</div>
+<div id="loadwhite"></div>
+<header>
+    <img class="logo" src="../images/mozartsil.png"/>
+    <h1 class="title">Mozart nGram Viewer</h1>
+    <h2 class="subtitle">Missa</h2>
+    <div class="toolbox">
+        <div class="field" style="float:left; margin: 0 10px;">
+            <p class="control">
+                <span class="select is-primary">
+
+                    <select id="ngram-select">
+                         <option>n-Grams</option>
+                        <option>No Options available</option>
+                    </select>
+                </span>
+            </p>
+        </div>
+<button id="open-dist" class="button is-primary">Open Menu</button>
+    </div>
+
+    <div class="legend" id="mislegend">
+    </div>
+    <div class="legend" id="movlegend">
+        <figure>
+            <label for="kyrie">
+            Kyrie
+            </label>
+            <div id="kyrie" class="legend-color-field"></div>
+        </figure>
+        <figure>
+            <label for="gloria">
+                Gloria
+            </label>
+            <div id="gloria" class="legend-color-field"></div>
+        </figure>
+        <figure>
+            <label for="credo">
+                Credo
+            </label>
+            <div id="credo" class="legend-color-field"></div>
+        </figure>
+        <figure>
+            <label for="sanctus">
+                Sanctus
+            </label>
+            <div id="sanctus" class="legend-color-field"></div>
+        </figure>
+        <figure>
+            <label for="benedictus">
+                Benedictus
+            </label>
+            <div id="benedictus" class="legend-color-field"></div>
+        </figure>
+        <figure>
+            <label for="agnusdei">
+                Agnus Dei
+            </label>
+            <div id="agnusdei" class="legend-color-field"></div>
+        </figure>
+    </div>
+</header>
+
+<main>
+</main>
+<footer>
+    &copy; April 2017 by Tim Eipert
+</footer>
+<script src="../scripts/vendor/jquery-3.2.1.min.js"></script>
+<script src="../scripts/vendor/jquery-ui.min.js"></script>
+<script src="../scripts/vendor/jquery.getUrlParam.js"></script>
+<script src="../scripts/vendor/datatables/datatables.js"></script>
+<script src="../scripts/vendor/vexflow-min.js"></script>
+<script src="../scripts/vendor/jstree/jstree.min.js"></script>
+<script src="../scripts/vendor/raphael.min.js"></script>
+<script src="../scripts/ngram/filedistributor.js"></script>
+<script src="../scripts/ngram/mpviewer.js"></script>
+<script src="../scripts/ngram/ngramviewer.js"></script>
+<script src="../scripts/ngram/main.js"></script>
+<!--<script src="../scripts/ngram/viewer.min.js"></script>-->
+</body>
+</html>

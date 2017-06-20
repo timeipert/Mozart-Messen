@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charts</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+    <link href="../scripts/vendor/bulma.css" rel="stylesheet"/>
+
+<link href="main.css" rel="stylesheet">
+    <link href="../scripts/vendor/animate.css" rel="stylesheet">
+    <script src="../scripts/vendor/jquery-3.2.1.min.js"></script>
+    <script src="../scripts/vendor/charts/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+
+
+</head>
+<body>
+<div class="columns">
+    <div class="column is-2">
+        <aside class="menu ">
+            <p class="menu-label">
+                Navigation
+            </p>
+            <ul class="menu-list" >
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../ngram/index.html">nGramme</a></li>
+                <li><a href="takte.html">Takte</a></li>
+                <li><a href="tempo.html">Tempo</a></li>
+                <li><a>Noten</a>
+                <ul id="eachmissa">
+
+
+                </ul>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="column">
+        <div id="main">
+        </div>
+    </div>
+
+</div>
+
+<script src="data/countdata.js"></script>
+<script src="../scripts/counter/messenchart.js">
+</script>
+
+</body>
+</html>

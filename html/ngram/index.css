@@ -1,0 +1,237 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+#loadwhite {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Kanit", sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 20px;
+    background: #f0f0f0;
+    box-shadow: 0 0 5px #ccc;
+
+    position: relative;
+    top: 0;
+    z-index:1000;
+}
+main {
+margin: 20px auto 100px;
+    width: 86%;
+
+}
+footer {
+    padding: 1.2em;
+    background: #f0f0f0;
+    font-size: 0.8em;
+
+    width: 100%;
+    box-shadow: 0 0 5px #ccc;
+}
+.subtitle {
+
+    margin-bottom: 0 !important;
+
+}
+.title {
+    padding: 0;
+    margin: 0;
+
+}
+.toolbox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.toolbox figure label {
+    float: left;
+    font-size: 1.4em;
+    margin: 0 10px;
+    color: #333333;
+}
+figure {
+    float: left;
+}
+
+#maintable tr td {
+    vertical-align: super;
+}
+table tr td {
+    width: 30%;
+}
+table tr td ul li {
+    float: left;
+    list-style-type: none;
+    padding: 5px;
+    font-size: 0.5em;
+}
+#starter {
+    margin: 100px 0;
+    width: 100%;
+
+
+    background: #fff;
+
+}
+.ui-tooltip {
+    font-size: 0.5em !important;
+}
+
+.ui-selectmenu-menu {
+    z-index: 10000 !important;
+}
+/* LOADER ANIMATION */
+.sk-folding-cube {
+    margin: 300px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+    transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+    transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+    transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+.sk-folding-cube .sk-cube4:before {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+    0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    } 25%, 75% {
+          -webkit-transform: perspective(140px) rotateX(0deg);
+          transform: perspective(140px) rotateX(0deg);
+          opacity: 1;
+      } 90%, 100% {
+            -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+            opacity: 0;
+        }
+}
+
+@keyframes sk-foldCubeAngle {
+    0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    } 25%, 75% {
+          -webkit-transform: perspective(140px) rotateX(0deg);
+          transform: perspective(140px) rotateX(0deg);
+          opacity: 1;
+      } 90%, 100% {
+            -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+            opacity: 0;
+        }
+}
+.ui-widget-overlay {
+background: #fff !important;
+    opacity: 0.9 !important;
+    z-index: 10000 !important;
+}
+.logo {
+    height: 60px;
+    float: left;
+    margin: 0 20px;
+}
+.legend {
+    display: none;
+    position: absolute;
+
+    right: 20px;
+    margin-top: 30px;
+    font-size: 0.6em;
+}
+.legend figure {
+    margin: 0 5px;
+}
+.legend .legend-color-field {
+    width: 50px;
+    height: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.3);;
+    -moz-background-clip: border;     /* Firefox 3.6 */
+    -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+    background-clip: border-box;
+}
+#kyrie { background: #b7e6e6; }
+#gloria { background: #999999; }
+#credo { background: #99e699; }
+#sanctus { background: #E99999; }
+#benedictus { background: #E9D5A1; }
+#agnusdei { background: #9999e9; }
+
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 20px;
+    z-index: 100000000;
+    background: white;
+    height: 100%;
+
+
+}
+
+aside ul li a {
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+}

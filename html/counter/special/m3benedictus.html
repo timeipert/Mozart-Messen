@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missa Nr 3 Benedictus</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+    <link href="../../scripts/vendor/bulma.css" rel="stylesheet"/>
+    <script src="../../scripts/vendor/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+    <link href="../main.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Messe Nr. 3</h1>
+
+
+<div style="width: 500px; margin: auto;">
+<canvas id="mainchart" width="400" height="400"></canvas>
+</div>
+
+<script>
+
+    var ctx = document.getElementById("mainchart");
+    var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ["C","G","D","A","E", "H", "F#", "C#","Cb","Gb","Db", "Ab", "Eb","B", "F"],
+            datasets: [{
+                label: "Benedictus",
+                countAll: 392,
+                backgroundColor: "rgba(200,150,20,0.4)",
+                data: [86.73, 102.04, 170.92, 102.04, 56.12, 25.51, 33.16, 68.88, 0, 0, 17.86, 73.98, 89.29, 117.35]
+            }]
+        }
+    });
+
+</script>
+</body>
+</html>

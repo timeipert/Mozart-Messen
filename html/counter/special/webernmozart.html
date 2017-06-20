@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webern Mozart</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"/>
+    <link href="../../scripts/vendor/bulma.css" rel="stylesheet"/>
+
+    <link href="../main.css" rel="stylesheet">
+    <link href="../../scripts/vendor/animate.css" rel="stylesheet">
+    <script src="../../scripts/vendor/jquery-3.2.1.min.js"></script>
+    <script src="../../scripts/vendor/charts/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+<style>
+    .container {
+        float: left;
+        width: 500px;
+        margin: 30px;
+
+    }
+
+</style>
+
+</head>
+<body>
+<div class="columns">
+    <div class="column">
+        <div id="main">
+            <div class="container"><canvas id="chart1" width="500" heigth="300"></canvas></div>
+
+            <div class="container"><canvas id="chart2" width="500" heigth="300"></canvas></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="webernstreichtrio.js">
+</script>
+
+<script>
+    var ctx1 = document.getElementById("chart1");
+    var myChart = new Chart(ctx1, {
+        type: 'bar',
+        data: data["webern"],
+        showTooltip: true,
+        tooltipTemplate: "<%= value %>",
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                yAxes: [{
+                    display: true,
+                    ticks: {
+                        suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                        // OR //
+                        beginAtZero: true,   // minimum value will be 0.
+                        max: 300
+                    }
+                }]
+            }
+        }
+    });
+    var ctx2 = document.getElementById("chart2");
+    var myChart = new Chart(ctx2, {
+        type: 'bar',
+        data: data["missa4"],
+        showTooltip: true,
+        tooltipTemplate: "<%= value %>",
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                yAxes: [{
+                    display: true,
+                    ticks: {
+                        suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                        // OR //
+                        beginAtZero: true,   // minimum value will be 0.
+                        max: 300
+                    }
+                }]
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

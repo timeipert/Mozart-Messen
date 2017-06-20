@@ -1,0 +1,51 @@
+body {
+    font-family: 'Kanit', sans-serif;
+}
+h1 {
+
+    font-size: 1.3em;
+    border-bottom: 1px solid #ddd;
+}
+h2 {
+    text-align: center;
+    font-size: 1.1em;
+    border-bottom: 1px solid #ccc;
+}
+
+.infoBoxNoten:before {
+    content: "Gezählte Noten: "
+}
+.infoBoxNoten ul li {
+    list-style-type: none;
+
+    padding: 0 10px;
+}
+.infoBoxNoten ul {
+    margin: 0;
+}
+canvas {
+    margin: 30px 0;
+}
+.missa {
+    display: none;
+}
+.activeChild {
+    display: block;
+}
+#main {
+
+}
+.activeLink {
+    background: #cdcdcd;
+}
+.columns {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.chartDeclaration {
+    font-size: 0.8em;
+    color: #888;
+    text-align: center;
+}

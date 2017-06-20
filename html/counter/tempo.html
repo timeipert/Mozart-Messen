@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link href="main.css" rel="stylesheet" />
+    <link href="../scripts/vendor/bulma.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Tempo</title>
+    <style>
+
+        body {
+            padding: 0.75rem;
+            margin: 0;
+            font-family: 'Kanit', sans-serif
+        }
+        main {
+            display: grid;
+            grid-template-columns: 450px;
+            grid-template-rows: 700px 500px 500px;
+        }
+        .chart {
+            width: 900px;
+
+        }
+        #chart1 {
+            grid-column-start: 1;
+            grid-column-end: end;
+            grid-row-start: 1;
+
+        }
+        #chart2 {
+            width: 900;
+            grid-column-start: 1;
+            grid-column-end: end;
+            grid-row-start: 2;
+            padding: 5px;
+
+        }
+
+        h1 {
+            font-size: 1.5em;
+            border:0;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            padding: 5px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="columns">
+    <div class="column is-2">
+        <aside class="menu ">
+            <p class="menu-label">
+                Navigation
+            </p>
+            <ul class="menu-list" >
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../ngram/index.html">nGramme</a></li>
+                <li><a href="takte.html">Takte</a></li>
+                <li><a class="is-active">Tempo</a></li>
+                <li><a href="index.html">Noten</a>
+
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="column">
+        <h1>Tempoverteilung der verschiedenen Messen</h1>
+        <p></p>
+        <main>
+
+
+            <div class="chart" id="chart1">
+
+                <h2>Häufigkeit der Tempoänderungen</h2>
+                <p></p>
+                <canvas id="myChart" width="600" height="400"></canvas>
+            </div>
+            <div class="chart" id="chart2">
+
+
+                <canvas id="myChart2" width="600" height="400"></canvas>
+            </div>
+
+        </main>
+    </div>
+
+</div>
+
+<script src="../scripts/vendor/jquery-3.2.1.min.js"></script>
+<script src="../scripts/vendor/charts/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+<script src="../scripts/counter/tempo.js"></script>
+<script>
+    $(document).ready(function() {
+
+        Chart1.createChart();
+        Chart2.createChart();
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mpView</title>
+    <style>
+        .measureline {
+            width: 500px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+<body>
+
+<table id="maintable"><thead><tr><td>nGramm</td><td>H&auml;ufigkeit</td><td>Positionen</td></tr></thead><tbody><tr><td>1|-4|-1|-1|-1</td><td>3</td><td><ul><li>19:19</li><li>19:19</li><li>19:19</li></ul></td></tr><tr><td>2|2|5|-2|-2</td><td>2</td><td><ul><li>84:84</li><li>90:90</li></ul></td></tr><tr><td>0|4|0|-2|0</td><td>2</td><td><ul><li>36:36</li><li>36:36</li></ul></td></tr></tbody></table>
+<div id="ngram">c/4 c/4 d/4 e/4 f/4 g/4</div>
+<div id="ngramcanvas"><canvas width="400" height="80"></canvas>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://yastatic.net/raphael/2.1.0/raphael.min.js"></script>
+<script src="https://unpkg.com/vexflow@1.2.83/releases/vexflow-debug.js"></script>
+<script src="../../scripts/ngram/mpviewer.js"></script>
+
+<script>
+    var musicScale =
+        {
+            "-12":"c/3", "-11":"c#/3","-10":"d/3","-9":"d#/3","-8":"e/3","-7":"f/3","-6":"f#/3","-5":"g/3","-4":"g#/3","-3":"a/3","-2":"a#/3","-1":"b/3",
+            "0": "c/4", "1":"c#/4","2":"d/4","3":"d#/4","4":"e/4","5":"f/4","6":"f#/4","7":"g/4","8":"g#/4","9":"a/4","10":"a#/4","11":"b/4",
+            "12":"c/5",
+            "13":"c#/5"};
+    $( "#maintable tbody tr td ul" ).each(function( index ) {
+        var viewer = new Mpviewer($(this), index);
+
+        viewer.buildVector(500);
+    });
+    buildScore(ele,notes);
+    function buildScore(ele) {
+        var canvas = $(ele)[0];
+        var renderer = new Vex.Flow.Renderer(canvas,
+            Vex.Flow.Renderer.Backends.CANVAS);
+
+        var ctx = renderer.getContext();
+        ctx.scale(0.7, 0.7);
+        var stave = new Vex.Flow.Stave(0, 0, 300);
+
+        // Add a treble clef
+        stave.addClef("treble");
+        stave.setContext(ctx).draw();
+        var notes = [];
+
+        var notArray = $(notes).text().split(" ");
+        notArray.forEach(function (el) {
+            console.log(el);
+            notes.push(new Vex.Flow.StaveNote({clef: "treble", keys: [el], duration: "q"}));
+        })
+
+
+        // Helper function to justify and draw a 4/4 voice
+        Vex.Flow.Formatter.FormatAndDraw(ctx, stave, notes);
+    }
+</script>
+</body>
+</html>
